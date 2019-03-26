@@ -17,7 +17,7 @@ public class cadastroteste {
 		c.setCnpj_cpf("09245791963");
 		Dao<cliente> clienteDao = new GenericDao<cliente>();		
 		clienteDao.inserir(c);
-		
+		//teste
 		
 		Dao<projetos_cadastrados> projetoDAO = new GenericDao<projetos_cadastrados>();
 		projetos_cadastrados pc = new projetos_cadastrados();
