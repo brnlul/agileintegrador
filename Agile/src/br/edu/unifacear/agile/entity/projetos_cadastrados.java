@@ -16,15 +16,9 @@ import org.hibernate.annotations.ForeignKey;
 
 import com.sun.istack.internal.NotNull;
 
-
-
-
-
-
 @Entity
-@Table(name="tab_projetos")
+@Table(name = "tab_projetos")
 public class projetos_cadastrados {
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,7 +26,7 @@ public class projetos_cadastrados {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String cod_projeto;
 	private String descricao;
-	
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -42,9 +36,8 @@ public class projetos_cadastrados {
 	}
 
 	@ManyToOne
-	@JoinColumn(name="EQUIPE_ID")
+	@JoinColumn(name = "EQUIPE_ID")
 	private cliente equipe;
-
 
 	public cliente getCliente() {
 		return equipe;
@@ -70,8 +63,4 @@ public class projetos_cadastrados {
 		this.cod_projeto = cod_projeto;
 	}
 
-	
-	
-	
-	
 }
