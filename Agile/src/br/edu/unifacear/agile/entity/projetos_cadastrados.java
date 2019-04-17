@@ -19,6 +19,8 @@ import com.sun.istack.internal.NotNull;
 
 
 
+
+
 @Entity
 @Table(name="tab_projetos")
 public class projetos_cadastrados {
@@ -27,22 +29,30 @@ public class projetos_cadastrados {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String cod_projeto;
+	private String descricao;
 	
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
 	@ManyToOne
-	@JoinColumn(name="CLIENTE_ID")
-	private cliente cliente;
-	
+	@JoinColumn(name="EQUIPE_ID")
+	private cliente equipe;
+
+
 	public cliente getCliente() {
-		return cliente;
+		return equipe;
 	}
 
 	public void setCliente(cliente cliente) {
-		this.cliente = cliente;
+		this.equipe = cliente;
 	}
-
-	@ManyToMany
-	private List<projetos_cadastrados> projetos;
 
 	public Integer getId() {
 		return id;
