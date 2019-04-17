@@ -1,90 +1,67 @@
 package br.edu.unifacear.agile.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.ForeignKey;
+
+import com.sun.istack.internal.NotNull;
+
+
+
+
 @Entity
-@Table(name="tab_projetos_cadastrados")
+@Table(name="tab_projetos")
 public class projetos_cadastrados {
 
-	public static projetos_cadastrados projetos;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	//@Column(nullable=false)
 	private String cod_projeto;
-	private String nomeprojeto;
-	private String dev1;
-	private String dev2;
-	private String dev3;
-	private String estimativa;
-	private String descricao;
+	
 	@ManyToOne
 	@JoinColumn(name="CLIENTE_ID")
-	private String cliente;
+	private cliente cliente;
 	
-	
-	
-	public String getCliente() {
+	public cliente getCliente() {
 		return cliente;
 	}
-	public void setCliente(String cliente) {
+
+	public void setCliente(cliente cliente) {
 		this.cliente = cliente;
 	}
-	public String getDev1() {
-		return dev1;
-	}
-	public void setDev1(String dev1) {
-		this.dev1 = dev1;
-	}
-	public String getDev2() {
-		return dev2;
-	}
-	public void setDev2(String dev2) {
-		this.dev2 = dev2;
-	}
-	public String getDev3() {
-		return dev3;
-	}
-	public void setDev3(String dev3) {
-		this.dev3 = dev3;
-	}
-	public String getCod_projeto() {
-		return cod_projeto;
-	}
-	public void setCod_projeto(String cod_projeto) {
-		this.cod_projeto = cod_projeto;
-	}
+
+	@ManyToMany
+	private List<projetos_cadastrados> projetos;
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getNomeprojeto() {
-		return nomeprojeto;
+
+	public String getCod_projeto() {
+		return cod_projeto;
 	}
-	public void setNomeprojeto(String nomeprojeto) {
-		this.nomeprojeto = nomeprojeto;
+
+	public void setCod_projeto(String cod_projeto) {
+		this.cod_projeto = cod_projeto;
 	}
+
 	
-	public String getEstimativa() {
-		return estimativa;
-	}
-	public void setEstimativa(String estimativa) {
-		this.estimativa = estimativa;
-	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+	
+	
 	
 }

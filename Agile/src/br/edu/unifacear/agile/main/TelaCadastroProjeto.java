@@ -71,13 +71,9 @@ public class TelaCadastroProjeto extends JFrame {
 				projetos_cadastrados p = new projetos_cadastrados();
 				Dao<projetos_cadastrados> projetoDao = new GenericDao<projetos_cadastrados>();
 				
-				p.setNomeprojeto(txt_nomep.getText());
+				
 				p.setCod_projeto(txt_codprojeto.getText());
-				p.setDev1(txt_dev1.getText());
-				p.setDev2(txt_dev2.getText());
-				p.setDev3(txt_dev3.getText());
-				p.setEstimativa(txt_estimativa.getText());
-				p.setDescricao(txt_descricao.getText());
+				
 				/*if (p.getCod_projeto() == null) {
 					JOptionPane.showMessageDialog(null, "Campo codigo não pode ficar em branco",getTitle(), JOptionPane.INFORMATION_MESSAGE);
 				}*/
